@@ -3,6 +3,7 @@ import { HashRouter, Switch, Route, Redirect } from 'react-router-dom'
 // import asyncComponent from '@/utils/asyncComponent'
 
 import home from '@/views/home/home'
+import contacts from '@/views/contacts/contacts'
 
 // https://segmentfault.com/a/1190000010067597
 // asyncComponent 异步加载组件，打包会分割
@@ -16,6 +17,7 @@ export default class RouteConfig extends Component {
 			<HashRouter>
 				<Switch>
 					<Route path="/" exact component={home} />
+					<Route path="/contacts" component={contacts} />
 					<Redirect to="/" />
 				</Switch>
 			</HashRouter>

@@ -2,7 +2,6 @@ import axios from 'axios'
 
 // TODO:
 const envconfig = {
-    imgUrl: '',
     baseURL: ''
 }
 

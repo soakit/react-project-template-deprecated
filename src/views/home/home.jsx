@@ -18,7 +18,7 @@ class Home extends Component {
 
     render() {
 		const {recordList} = this.props.homeData
-		return <div>
+		return <div className="mod-home">
 			<h1>首页</h1>
 			<ul>
 				<li>{recordList[0]}</li>
