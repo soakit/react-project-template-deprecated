@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 
 import * as serviceWorker from './serviceWorker';
 
-import Route from './router/'
+import App from './App.js'
 import store from '@/store/'
 import './assets/css/base.less';
 
@@ -21,7 +21,7 @@ const render = Component => {
 	)
 }
 
-render(Route)
+render(App)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
