@@ -17,15 +17,22 @@ class Home extends Component {
 	}
 
     render() {
-        return <h1>首页</h1>
+		const {recordList} = this.props.homeData
+		return <div>
+			<h1>首页</h1>
+			<ul>
+				<li>{recordList[0]}</li>
+				<li>{recordList[1]}</li>
+				<li>{recordList[2]}</li>
+			</ul>
+		</div>
     }
 
 }
 
 export default connect(
 	state => ({
-		formData: state.formData,
-		proData: state.proData
+		homeData: state.homeData,
 	}),
 	{
 		getAllRecords,
