@@ -1,0 +1,17 @@
+{
+    "presets": [
+        "react-app", [
+            "@babel/preset-env",
+			{
+				"useBuiltIns": "usage",
+				"modules": false,
+				"targets": {
+					"browsers": ["last 5 versions", "ie >= 9"]
+				}
+			}
+        ]
+    ],
+    "plugins": [
+        ["@babel/plugin-proposal-decorators", { "legacy": true }]
+    ]
+}
