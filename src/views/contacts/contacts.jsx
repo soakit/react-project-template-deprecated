@@ -1,40 +1,56 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
-import mixin, { padStr } from '@/utils/mixin'
+import mixin, { padStr } from '../../utils/mixin'
 import './contacts.less'
 
-import { actions as contactsActions } from '@/store/contacts'
+import { actions as contactsActions } from '../../store/contacts.redux'
+import { actions as loginActions } from '../../store/login.redux'
 
-const { getContactsList, } = contactsActions
+const { logout, } = loginActions
 
+const { getContactsList } = contactsActions
 
-@mixin({ padStr })
-class Contacts extends Component {
-
-    componentDidMount() {
-        this.props.getContactsList()
-	}
-
-    render() {
-		const {contactsList} = this.props.contactsData
-		return <div className="mod-contacts">
-			<h1>联系人</h1>
-			<ul>
-				<li>{contactsList[0]}</li>
-				<li>{contactsList[1]}</li>
-				<li>{contactsList[2]}</li>
-			</ul>
-		</div>
-    }
-
-}
-
-export default connect(
+@connect(
 	state => ({
-		contactsData: state.contactsData,
+		...state.userData,
+		...state.contactsData
 	}),
 	{
-		getContactsList,
+		logout,
+		getContactsList
+	},
+)
+@mixin({ padStr })
+class Contacts extends Component {
+	componentDidMount() {
+		this.props.getContactsList()
 	}
-)(Contacts)
+
+	handleLogout() {
+		this.props.logout();
+	}
+
+	render() {
+		const { contactsList } = this.props
+		const path = this.props.location.pathname
+		const redirect = this.props.redirectTo
+		return (
+			<div className="mod-contacts">
+				{redirect && redirect !== path ? (
+					<Redirect to={this.props.redirectTo} />
+				) : null}
+				<h1>人脉</h1>
+				<br/>
+				<h1 onClick={this.handleLogout.bind(this)}>退出</h1>
+				<br/>
+				<ul>
+				{contactsList.map((item, index) => <li key={index}>人脉222{item}</li>)}
+				</ul>
+			</div>
+		)
+	}
+}
+
+export default Contacts

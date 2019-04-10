@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import { reducer as homeReducer } from './home'
-import { reducer as contactsReducer } from './contacts'
+import { reducer as homeReducer } from './home.redux'
+import { reducer as contactsReducer } from './contacts.redux'
+import { reducer as loginReducer } from './login.redux'
 import thunk from 'redux-thunk'
 
 // https://github.com/yellowfrogCN/reduxDevTools/blob/master/README.md
@@ -21,7 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 let store = createStore(
-	combineReducers({ ...homeReducer, ...contactsReducer, }),
+	combineReducers({ ...homeReducer, ...contactsReducer, ...loginReducer}),
 	middleware
 )
 

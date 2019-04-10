@@ -1,4 +1,4 @@
-import api from '@/utils/api-client'
+import api from '../utils/api-client'
 
 const home = {
 	// 获取记录
@@ -9,11 +9,11 @@ export const actions = {
 	// 保存表单数据
     getContactsList: () => {
         return async dispatch => {
-            const result = [1, 2, 3]// await api('get', '/getContactsList')
-            dispatch({
-                type: home.GET_CONTACTS_LIST,
-                contactsList: result
-            })
+			const result = [1, 2, 3]// await api('get', '/getContactsList')
+			dispatch({
+				type: home.GET_CONTACTS_LIST,
+				contactsList: result
+			})
         }
     },
 }
