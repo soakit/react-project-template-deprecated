@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
 
 import App from './App.js'
-import store from './store/index.js'
+import store from '@/store/index.js'
 import './assets/css/base.less';
 import 'antd-mobile/dist/antd-mobile.css';
 

@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
-import mixin, { padStr } from '../../utils/mixin'
+import mixin, { padStr } from '@/utils/mixin'
 import './contacts.less'
 
-import { actions as contactsActions } from '../../store/contacts.redux'
-import { actions as loginActions } from '../../store/login.redux'
+import { actions as contactsActions } from '@/store/contacts.redux'
+import { actions as loginActions } from '@/store/login.redux'
 
 const { logout, } = loginActions
 

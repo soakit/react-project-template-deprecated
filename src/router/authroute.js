@@ -1,8 +1,8 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import api from '../utils/api-client'
-import { actions as loginActions } from '../store/login.redux'
+import api from '@/utils/api-client'
+import { actions as loginActions } from '@/store/login.redux'
 
 const { loadData, } = loginActions
 

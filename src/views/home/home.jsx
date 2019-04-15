@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import mixin, { padStr } from '../../utils/mixin'
+import mixin, { padStr } from '@/utils/mixin'
 import './home.less'
 
-import { actions as homeActions } from '../../store/home.redux'
+import { actions as homeActions } from '@/store/home.redux'
 
 const { getAllRecords, } = homeActions
 

@@ -1,4 +1,4 @@
-import api from '../utils/api-client'
+import api from '@/utils/api-client'
 
 const home = {
 	// 获取记录

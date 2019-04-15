@@ -1,4 +1,4 @@
-import api from '../utils/api-client'
+import api from '@/utils/api-client'
 
 const login = {
     AUTH_SUCCESS: Symbol('AUTH_SUCCESS'),

@@ -2,9 +2,9 @@ import React from 'react'
 import { List, InputItem, WingBlank, WhiteSpace, Button } from 'antd-mobile'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import itemWrap from '../../components/itemWrap'
+import itemWrap from '@/components/itemWrap'
 import './login.less'
-import { actions as loginActions } from '../../store/login.redux'
+import { actions as loginActions } from '@/store/login.redux'
 
 const { login, } = loginActions
 
