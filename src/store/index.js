@@ -1,12 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import { reducer as homeReducer } from './home.redux'
 import { reducer as contactsReducer } from './contacts.redux'
 import { reducer as loginReducer } from './login.redux'
-import thunk from 'redux-thunk'
 
 // https://github.com/yellowfrogCN/reduxDevTools/blob/master/README.md
 // 引入redux-devtools-extension的可视化工具（有点吊）
-import { composeWithDevTools } from 'redux-devtools-extension'
 
 // 创建一个中间件集合
 let middleware = applyMiddleware(thunk)
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
 	middleware = applyMiddleware(thunk)
 }
 
-let store = createStore(
+const store = createStore(
 	combineReducers({ ...homeReducer, ...contactsReducer, ...loginReducer}),
 	middleware
 )

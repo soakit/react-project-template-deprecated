@@ -12,14 +12,14 @@ export const actions = {
             const result = [109, 5, 15]// await api('get', '/getAllRecords')
             dispatch({
                 type: home.GET_ALL_RECORDS,
-                recordList: result
+                recordList: result,
             })
         }
     },
 }
 
 const defaultState = {
-	recordList: [0, 0, 0]
+	recordList: [0, 0, 0],
 }
 export const reducer = {
 	// 首页表单数据
@@ -30,5 +30,5 @@ export const reducer = {
 			default:
 				return state
 		}
-	}
+	},
 }
