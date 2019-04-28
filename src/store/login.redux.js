@@ -14,21 +14,21 @@ export const actions = {
       // const res = await api('post', '/login', data)
       // TODO: 判断res
       // if (true) {
-        localStorage.setItem('isLogined', 1)
-        dispatch({
-          type: login.AUTH_SUCCESS,
-          payload: {
-            redirectTo: '/contacts',
+      localStorage.setItem('isLogined', 1)
+      dispatch({
+        type: login.AUTH_SUCCESS,
+        payload: {
+          redirectTo: '/contacts',
+        },
+      })
+      dispatch({
+        type: login.LOAD_DATA,
+        payload: {
+          user: {
+            userName: 'admin',
           },
-        })
-        dispatch({
-          type: login.LOAD_DATA,
-          payload: {
-            user: {
-              userName: 'admin',
-            },
-          },
-        })
+        },
+      })
       // }
     }
   },

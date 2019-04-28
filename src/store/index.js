@@ -12,18 +12,18 @@ import { reducer as loginReducer } from './login.redux'
 let middleware = applyMiddleware(thunk)
 
 if (process.env.NODE_ENV !== 'production') {
-	const { createLogger } = require('redux-logger') // 利用redux-logger打印日志
-	// 调用日志打印方法 collapsed是让action折叠，看着舒服点
-	const loggerMiddleware = createLogger({ collapsed: true })
-	middleware = [thunk, loggerMiddleware]
-	middleware = composeWithDevTools(applyMiddleware(...middleware))
+  const { createLogger } = require('redux-logger') // 利用redux-logger打印日志
+  // 调用日志打印方法 collapsed是让action折叠，看着舒服点
+  const loggerMiddleware = createLogger({ collapsed: true })
+  middleware = [thunk, loggerMiddleware]
+  middleware = composeWithDevTools(applyMiddleware(...middleware))
 } else {
-	middleware = applyMiddleware(thunk)
+  middleware = applyMiddleware(thunk)
 }
 
 const store = createStore(
-	combineReducers({ ...homeReducer, ...contactsReducer, ...loginReducer}),
-	middleware
+  combineReducers({ ...homeReducer, ...contactsReducer, ...loginReducer }),
+  middleware
 )
 
 export default store
